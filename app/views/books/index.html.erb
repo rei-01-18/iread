@@ -6,7 +6,6 @@
       <p><%= book.next %></p>
     </div>
     <div class='edit'>
-    <li><%= link_to '削除', book_path(book.id), method: :delete %></li>
     <li><%= link_to '詳細', book_path(book.id), method: :get %></li>
     </div>
   <% end %>

@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2021_07_08_032107) do
     t.string "title", null: false
     t.date "date", null: false
     t.date "next"
+    t.text "review", null: false
+    t.integer "radio", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
