@@ -4,4 +4,5 @@ class Book < ApplicationRecord
     validates :title
     validates :date
   end
+  has_many :comments 
 end
