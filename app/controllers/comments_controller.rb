@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
-    Comment.create(comment_params)
-    redirect_to root_path
+    @comment = Comment.create(comment_params)
+    redirect_to book_path(book.id)
   end
 
   private
