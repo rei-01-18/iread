@@ -2,11 +2,19 @@
   <div class="container">
     <h3>投稿</h3>
     <%= form_with model: @book, url: books_path, local: true do |f| %>
-      <%= f.text_field :title, placeholder: "TITle" %>
+      <%= f.text_field :title, placeholder: "タイトル" %>
       <%= f.label :購入日を選択, class: 'lavel' %>
       <%= f.date_field :date, class: 'date-select' %>
       <%= f.label :次巻発売日を選択, class: 'lavel' %>
       <%= f.date_field :next, class: 'date-select' %>
+      <%= f.text_field :review, placeholder: "レビュー" %>
+      <p>評価<br>
+      <%= f.radio_button :radio, 1 %>
+      <%= f.radio_button :radio, 2 %>
+      <%= f.radio_button :radio, 3 %>
+      <%= f.radio_button :radio, 4 %>
+      <%= f.radio_button :radio, 5 %>
+      </p>
       <%= f.submit "SEND" %>
     <% end %>
   </div>
