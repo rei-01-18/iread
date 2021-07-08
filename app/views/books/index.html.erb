@@ -5,5 +5,8 @@
       <p><%= book.date %></p>
       <p><%= book.next %></p>
     </div>
+    <div class='edit'>
+    <li><%= link_to '削除', book_path(book.id), method: :delete %></li>
+    </div>
   <% end %>
 </div>

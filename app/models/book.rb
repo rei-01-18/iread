@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
 
   with_options presence: true do
-    varidates :title
-    varidates :date
+    validates :title
+    validates :date
   end
 end
