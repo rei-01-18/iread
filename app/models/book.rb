@@ -5,4 +5,5 @@ class Book < ApplicationRecord
     validates :date
   end
   has_many :comments 
+  belongs_to :user
 end
