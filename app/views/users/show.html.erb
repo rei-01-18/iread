@@ -1,0 +1,11 @@
+<h1>あなたへのおすすめ</h1>
+<h3>タイトル</h3>
+  <% if current_user.likes.present? %>
+    <% @category_recommend.each do |b| %>
+      <%= b.title %>
+    <% end %>
+  <% else %>
+    <% @book.each do |b| %>
+      <%= b.title %>
+    <% end %>
+  <% end %>
