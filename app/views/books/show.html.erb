@@ -10,9 +10,9 @@
     <%= render "layouts/radio"%>
   </div>
   <div class="container">
-    <%= form_with(model:[@book, @comment], method: :post) do |f| %>
+    <%= form_with(model: [@book, @comment], method: :post) do |f| %>
       <%= f.text_area :text, placeholder: "コメントする" %>
-      <%= f.submit "SEND" %>
+      <%= f.submit "SEND", id: "comment" %>
     <% end %>
   </div>
   <div class="comments">
