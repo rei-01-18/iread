@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:destroy, :show]
 
   def index
-    @books = Book.all 
+    @books = Book.order("created_at DESC")
   end
 
   def new
@@ -11,7 +11,6 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.create(book_params)
-  
     if @book.save
       redirect_to root_path
     else
@@ -32,7 +31,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :date, :next, :review, :radio).merge(user_id: current_user.id)
+    params.require(:book).permit(:title, :date, :next, :review, :radio, :category_id).merge(user_id: current_user.id)
   end
 
   def set_book
