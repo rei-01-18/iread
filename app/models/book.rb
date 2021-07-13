@@ -13,4 +13,13 @@ class Book < ApplicationRecord
   belongs_to :user
   has_many :liked_users, through: :likes, source: :user
   has_many :likes
+
+  def self.search(search)
+    if search != ""
+      Book.where('title LIKE(?)', "%#{search}%")
+    else
+      Book.all
+    end
+  end
+
 end
