@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_07_09_023925) do
     t.date "next"
     t.text "review", null: false
     t.integer "radio", null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_07_09_023925) do
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "book_id"
-    t.text "text"
+    t.text "text", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

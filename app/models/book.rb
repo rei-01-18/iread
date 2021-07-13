@@ -4,6 +4,6 @@ class Book < ApplicationRecord
     validates :title
     validates :date
   end
-  has_many :comments 
+  has_many :comments, dependent: :destroy
   belongs_to :user
 end

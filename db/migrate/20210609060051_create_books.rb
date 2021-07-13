@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration[6.0]
       t.date :next
       t.text :review,      null: false
       t.integer :radio,    null: false
-      t.integer :user_id,  null: false
+      t.integer :user_id,  foreign_key: true
 
       t.timestamps
     end
