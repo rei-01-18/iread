@@ -13,8 +13,8 @@
       <%= f.radio_button :radio, 2 %>
       <%= f.radio_button :radio, 3 %>
       <%= f.radio_button :radio, 4 %>
-      <%= f.radio_button :radio, 5 %>
-      </p>
+      <%= f.radio_button :radio, 5 %></p>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
       <%= f.submit "SEND" %>
     <% end %>
   </div>

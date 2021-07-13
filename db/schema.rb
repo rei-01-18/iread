@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_07_13_025926) do
     t.text "review", null: false
     t.integer "radio", null: false
     t.integer "user_id"
+    t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
