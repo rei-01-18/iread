@@ -28,6 +28,16 @@ class BooksController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @books = Book.search(params[:keyword])
+    render :index
+  end
+
+  def category
+    category_id = params[:q][:category_id_eq]
+    @category = Category.find_by(id: category_id)
+  end
+
   private
 
   def book_params
