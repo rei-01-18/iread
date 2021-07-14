@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
 
   def show
+    @nickname = current_user.nickname
+    @title = current_user.books
     @book = Book.order("RAND()").limit(2)
-    @user = User.find_by(id: params[:id])
-    @likes = Like.where(user_id: @user.id).order(created_at: :desc).limit(10)
+    @users = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @users.id).order(created_at: :desc).limit(10)
     if @likes.exists?
       like = @likes.last
       book = like.book
