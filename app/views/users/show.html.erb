@@ -1,3 +1,26 @@
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <% @title.each do |t| %>
+    <div class="content_post" >
+      <p><%= t.title %></p>
+      <p><%= t.date %></p>
+      <p> <%  if t.radio == 1 %>
+            絶対お勧めしたい
+          <% elsif t.radio == 2%>
+            お勧めしたい
+          <% elsif t.radio == 3%>
+            普通
+          <% elsif t.radio == 4%>
+            あまりお勧めしない
+          <% elsif t.radio == 5%>
+            お勧めしない
+          <% end%>
+      </p>
+      <p><%= t.category.name %></p>
+    </div>
+    </div>
+  <% end %>
+</div>
 <h1>あなたへのおすすめ</h1>
 <h3>タイトル</h3>
   <% if current_user.likes.present? %>
